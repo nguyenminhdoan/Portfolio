@@ -6,14 +6,23 @@ import styled from "styled-components";
 import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
+// ANIMATION
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
 function OurWorks() {
   return (
-    <StyleWork>
+    <StyleWork
+      exit="exit"
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      style={{ backgroundColor: "#fff" }}
+    >
       <StyleMovie className="movie">
         <h2>The Athlete</h2>
         <div id="line"></div>
-        <Link>
+        <Link to="work/the-athlete">
           <img src={athlete} alt="athlete" />
         </Link>
       </StyleMovie>
@@ -21,7 +30,7 @@ function OurWorks() {
       <StyleMovie className="movie">
         <h2>The Racer</h2>
         <div id="line"></div>
-        <Link>
+        <Link to="work/the-racer">
           <img src={theracer} alt="The-racer" />
         </Link>
       </StyleMovie>
@@ -29,7 +38,7 @@ function OurWorks() {
       <StyleMovie className="movie">
         <h2>The Goodtimes</h2>
         <div id="line"></div>
-        <Link>
+        <Link to="work/good-times">
           <img src={goodtimes} alt="Good-times" />
         </Link>
       </StyleMovie>
@@ -38,7 +47,7 @@ function OurWorks() {
 }
 
 // STYLE COMPONENTS
-const StyleWork = styled.div`
+const StyleWork = styled(motion.div)`
   min-height: 100vh;
   /* background-color: #fff; */
   overflow: hidden;

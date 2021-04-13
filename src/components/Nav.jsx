@@ -15,10 +15,10 @@ function Nav() {
           <Link to="/">1. About Us</Link>
         </li>
         <li>
-          <Link to="work">2. Our Works</Link>
+          <Link to="/work">2. Our Works</Link>
         </li>
         <li>
-          <Link to="contact">3. Contact Us</Link>
+          <Link to="/contact">3. Contact Us</Link>
         </li>
       </ul>
     </StyleNav>
