@@ -1,72 +1,75 @@
 import React from "react";
 import styled from "styled-components";
 import { StyledAbout } from "../styles";
+import Toggle from "./Toggle";
+import { AnimateSharedLayout } from "framer-motion";
+
+import { UseScroll } from "./useScroll";
+import { scrollReveal } from "../animation";
+
 function SectionFAQ() {
+  const [element, controls] = UseScroll();
   return (
-    <StyleFAQ>
-      <h2>
-        Any Questions <span>FAQ</span>
-      </h2>
+    <StyleFAQ
+      variants={scrollReveal}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
+      <AnimateSharedLayout>
+        <h2>
+          Any Questions <span>FAQ</span>
+        </h2>
+        <Toggle title="How Do We Start?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
+              animi!
+            </p>
+          </div>
+        </Toggle>
 
-      <div className="question">
-        <h4>How Do We Start?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-            animi!
-          </p>
-        </div>
-        <div className="faq-line "></div>
-      </div>
+        <Toggle title="How Much Does It Costs">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
+              animi!
+            </p>
+          </div>
+        </Toggle>
 
-      <div className="question">
-        <h4>How Much Does It Costs</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-            animi!
-          </p>
-        </div>
-        <div className="faq-line "></div>
-      </div>
+        <Toggle title="What Products Do You Offer">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
+              animi!
+            </p>
+          </div>
+        </Toggle>
 
-      <div className="question">
-        <h4>What Products Do You Offer</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-            animi!
-          </p>
-        </div>
-        <div className="faq-line "></div>
-      </div>
+        <Toggle title="Different Payment Method">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
+              animi!
+            </p>
+          </div>
+        </Toggle>
 
-      <div className="question">
-        <h4>Different Payment Method</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-            animi!
-          </p>
-        </div>
-        <div className="faq-line "></div>
-      </div>
-
-      <div className="question">
-        <h4>Daily Schedule</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-            animi!
-          </p>
-        </div>
-        <div className="faq-line "></div>
-      </div>
+        <Toggle title="Daily Schedule">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
+              animi!
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </StyleFAQ>
   );
 }
@@ -74,6 +77,7 @@ function SectionFAQ() {
 // STYLE COMPONENT
 const StyleFAQ = styled(StyledAbout)`
   display: block;
+  cursor: pointer;
   span {
     display: block;
   }
