@@ -6,7 +6,7 @@ function Toggle({ children, title }) {
 
   return (
     <motion.div layout onClick={() => setToggle(!toggle)}>
-      <motion.h4 style={{ padding: "3rem" }} layout>
+      <motion.h4 style={{ padding: "3rem 0rem", color: "#4766bb" }} layout>
         {title}
       </motion.h4>
       {toggle ? children : ""}

@@ -10,7 +10,7 @@ import { StyledAbout, StyleDescription, StyleImage } from "../styles";
 import { UseScroll } from "./useScroll";
 
 function SectionServices() {
-  const [element, controls] = UseScroll(); 
+  const [element, controls] = UseScroll();
   return (
     <StyleService
       variants={fade}
@@ -88,6 +88,11 @@ const StyleCard = styled.div`
       color: #000;
       padding: 1rem 2rem;
       font-size: 1.7rem;
+    }
+    @media (max-width: 600px) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     }
   }
 `;

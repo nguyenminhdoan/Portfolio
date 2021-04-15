@@ -18,6 +18,7 @@ import {
 } from "../animation";
 
 import { UseScroll } from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop";
 
 function OurWorks() {
   const [element, controls] = UseScroll();
@@ -73,6 +74,7 @@ function OurWorks() {
           <img src={goodtimes} alt="Good-times" />
         </Link>
       </StyleMovie>
+      <ScrollTop />
     </StyleWork>
   );
 }
@@ -85,6 +87,10 @@ const StyleWork = styled(motion.div)`
   padding: 5rem 10rem;
   h2 {
     padding: 1rem 0rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 3rem 2rem;
   }
 `;
 
